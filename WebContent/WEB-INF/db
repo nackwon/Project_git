@@ -1,0 +1,2 @@
+SELECT password FROM membervo WHERE nickname = 'admin';
+SELECT * FROM MEMBERVO;
