@@ -27,8 +27,9 @@
 				<div>
 					<input type="password" name="password" id="password" placeholder="Enter the Password">
 				</div><br>
+				<span id="loginCheck"></span>
 				<div>
-					<input type="submit" value="Login">
+					<input type="submit" value="Login" onclick="id()">
 				</div>
 			</form>
 		</div>
@@ -39,6 +40,7 @@
 	<%
 	} else{%>
 	<div>환영 합니다. <%=nickname %>님</div>
+	<div><a href="./main/logout.jsp ">로그아웃</a></div>
 	<%
 	
 	}	%>

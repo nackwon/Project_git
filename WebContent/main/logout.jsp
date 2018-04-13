@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%
+		session.invalidate();
+	%>
+	<script type="text/javascript">
+		location.href="./login";
+	</script>
 </body>
 </html>

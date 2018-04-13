@@ -25,7 +25,7 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=euc-kr");
-
+		
 		StringBuffer sb = new StringBuffer();
 		PrintWriter out = response.getWriter();
 
@@ -37,17 +37,28 @@ public class LoginController extends HttpServlet {
 		MemberVO vo = new MemberVO();
 		int result = dao.login(nickname, password);
 		System.out.println(result);
-
+		
 		if (result == 1) {
 			HttpSession session = request.getSession(); // 세션 생성
 			session.setAttribute("nickname", nickname);
-
+			 
 		} else if (result == 2) {
-			System.out.println("비밀번호가 다릅니다.");
+			out.print("<script type='text/javascript'>");
+			out.print("document.getElementById('loginCheck').innerHTML='비밀번호가 다릅니다.'");
+			out.print("history.back();");
+			out.print("</script>");
 		} else if (result == -1) {
-			System.out.println("아이디가 다릅니다.");
+			/*sb.append("<script type='text/javascript'>");
+			sb.append("");
+			sb.append("history.back();");
+			sb.append("</script>");
+			out.print(sb.toString());*/
 		} else {
-			System.out.println("DB에 문제가 생겼습니다.");
+			/*sb.append("<script type='text/javascript'>");
+			sb.append("");
+			sb.append("history.back();");
+			sb.append("</script>");
+			out.print(sb.toString());*/
 		}
 
 		RequestDispatcher rd = request.getRequestDispatcher(url);
