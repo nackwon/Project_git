@@ -11,6 +11,6 @@
 		if (vo == null) {
 			out.print("false");
 		} else {
-			out.print("true");
+			out.print(vo);
 		}
 	%>

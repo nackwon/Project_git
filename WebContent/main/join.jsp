@@ -39,12 +39,10 @@ span {
 
 	//아이디 빈칸 등 체크
 	function nicknameCheck(val) {
-		
 		if ((val < "0" || val > "9") && (val < "A" || val > "Z") && (val < "a" || val > "z")) {
 			document.getElementById("n_span").innerHTML = "한글 및 특수기호는 사용할 수 없습니다.";
 		} else {
 			document.getElementById("n_span").innerHTML = "";
-		}
 
 		if (val.length < 3) {
 			document.getElementById("n_span").innerHTML = "3자 이상 작성을하세요";
@@ -69,8 +67,9 @@ span {
 				var result = this.responseText;
 
 				if (result == "true") {
-					document.getElementById("e_span").innerHTML = "사용할 수 없는 이메일 입니다.";
+				
 				} else if (result == "flase") {
+					document.getElementById("e_span").innerHTML = "사용할 수 없는 이메일 입니다.";
 
 				}
 			}
@@ -115,16 +114,14 @@ span {
 	<div class="container">
 		<form action="./git?cmd=registMember" method="post" name="l_f">
 			<div>
-				<input type="text" name="nickname" id="nickname"
-					class="control-label" onblur="nicknameDupleCheck()"
-					placeholder="Enter your Nickname" /> <input type="hidden"
-					id="isIdcheck" value="false" name="isIdCheck" />
+				<input type="text" name="nickname" id="nickname" class="control-label" onblur="nicknameDupleCheck()" placeholder="Enter your Nickname" /> 
+				<input type="hidden" id="isIdcheck" value="false" name="isIdCheck" />
 			</div>
 			<span id="n_span" class="n_style"></span>
 			<div>
 				<input type="text" id="email" name="email"
-					onblur="emailDupleCheck()" placeholder="Enter your E-mail" /> <input
-					type="hidden" id="isEmailcheck" value="false" name="isEmailCheck" />
+					onblur="emailDupleCheck()" placeholder="Enter your E-mail" />
+					 <input type="hidden" id="isEmailcheck" value="false" name="isEmailCheck" />
 			</div>
 			<span id="e_span"></span>
 			<div>
@@ -133,8 +130,7 @@ span {
 			</div>
 			<span id="p_span" class="p_style"></span>
 			<div class="row">
-				<input class="btn" type="submit" value="Sign up"
-					onclick="return finalCheck()" /> <span id="final_check"></span>
+				<input class="btn" type="submit" value="Sign up" /> <span id="final_check"></span>
 			</div>
 		</form>
 	</div>
@@ -142,3 +138,4 @@ span {
 	<!-- bottom -->
 </body>
 </html>
+<!-- 해야 할 일 : 유효성 체크 및 final_check -->

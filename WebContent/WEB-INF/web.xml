@@ -3,17 +3,39 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	
+	<!-- 회원가입 -->
 	<servlet>
 		<servlet-name>myservlet</servlet-name>
-		<servlet-class>kr.co.jimmy.controller.MemberController</servlet-class>
-	</servlet>	
-	
+		<servlet-class>kr.co.jimmy.controller.JoinController</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>myservlet</servlet-name>
 		<url-pattern>/git</url-pattern>
 	</servlet-mapping>
+
+	<!-- 로그인 -->
+	<servlet>
+		<servlet-name>logincontroller</servlet-name>
+		<servlet-class>kr.co.jimmy.controller.LoginController</servlet-class>
+	</servlet>
 	
+	<servlet-mapping>
+		<servlet-name>logincontroller</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<!-- admin 페이지 -->
+	<servlet>
+		<servlet-name>admincontroller</servlet-name>
+		<servlet-class>kr.co.jimmy.controller.AdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admincontroller</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DB 커넥션 풀 -->
 	<resource-ref>
 		<res-ref-name>jdbc/oracle</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>

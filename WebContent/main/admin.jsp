@@ -18,6 +18,8 @@
 				
 				if(result == "false"){
 					alert("해당하는 회원이 없습니다.");
+				} else if(result == "true"){
+					
 				}
 			}
 		}

@@ -12,10 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.jimmy.DAO.MemberDAO;
 import kr.co.jimmy.VO.MemberVO;
 
-public class MemberController extends HttpServlet {
+public class JoinController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//System.out.println("¸ÊÇÎ");
 		this.doPost(req, resp);
 	}
 
@@ -23,6 +24,7 @@ public class MemberController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
 		String cmd = request.getParameter("cmd");
 		String url = "./main/main.jsp";
 		cmd = cmd == null ? "" : cmd;
@@ -63,10 +65,7 @@ public class MemberController extends HttpServlet {
 			request.setAttribute("vo", vo);
 			
 			url = "./main/admin.jsp";
-		} else if ("idcheck".equals(cmd)) {
-
 		}
-
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}
