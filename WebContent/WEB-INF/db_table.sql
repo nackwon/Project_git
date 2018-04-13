@@ -7,4 +7,3 @@ CREATE TABLE member(
 
 //멤버 테이블 확인
 SELECT * FROM member;
-COMMIT;

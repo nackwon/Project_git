@@ -9,6 +9,7 @@
 </head>
 <body>
 	<a href="./git?cmd=join">회원가입</a>
-	<a href="./git?cmd=login">로그인</a>
+	<a href="./git?cmd=login">로그인</a><br>
+	<a href="./git?cmd=admin">관리자 페이지</a>
 </body>
 </html>
