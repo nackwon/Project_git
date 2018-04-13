@@ -110,18 +110,23 @@ span {
 </script>
 </head>
 <body>
+	<%
+		request.setCharacterEncoding("UTF-8");
+	%>
 	<!-- top -->
 	<div class="container">
 		<form action="./git?cmd=registMember" method="post" name="l_f">
 			<div>
-				<input type="text" name="nickname" id="nickname" class="control-label" onblur="nicknameDupleCheck()" placeholder="Enter your Nickname" /> 
-				<input type="hidden" id="isIdcheck" value="false" name="isIdCheck" />
+				<input type="text" name="nickname" id="nickname"
+					class="control-label" onblur="nicknameDupleCheck()"
+					placeholder="Enter your Nickname" /> <input type="hidden"
+					id="isIdcheck" value="false" name="isIdCheck" />
 			</div>
 			<span id="n_span" class="n_style"></span>
 			<div>
 				<input type="text" id="email" name="email"
-					onblur="emailDupleCheck()" placeholder="Enter your E-mail" />
-					 <input type="hidden" id="isEmailcheck" value="false" name="isEmailCheck" />
+					onblur="emailDupleCheck()" placeholder="Enter your E-mail" /> <input
+					type="hidden" id="isEmailcheck" value="false" name="isEmailCheck" />
 			</div>
 			<span id="e_span"></span>
 			<div>
@@ -130,7 +135,8 @@ span {
 			</div>
 			<span id="p_span" class="p_style"></span>
 			<div class="row">
-				<input class="btn" type="submit" value="Sign up" /> <span id="final_check"></span>
+				<input class="btn" type="submit" value="Sign up" /> <span
+					id="final_check"></span>
 			</div>
 		</form>
 	</div>

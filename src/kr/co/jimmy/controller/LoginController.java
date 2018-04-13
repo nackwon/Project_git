@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.tomcat.util.collections.SynchronizedStack;
-
 import kr.co.jimmy.DAO.LoginDAO;
 import kr.co.jimmy.VO.MemberVO;
 
@@ -26,7 +24,8 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+		response.setContentType("text/html;charset=euc-kr");
+
 		StringBuffer sb = new StringBuffer();
 		PrintWriter out = response.getWriter();
 
@@ -38,30 +37,17 @@ public class LoginController extends HttpServlet {
 		MemberVO vo = new MemberVO();
 		int result = dao.login(nickname, password);
 		System.out.println(result);
-		
+
 		if (result == 1) {
 			HttpSession session = request.getSession(); // 세션 생성
 			session.setAttribute("nickname", nickname);
 
 		} else if (result == 2) {
-			sb.append("<script>");
-			sb.append("alert('비밀번호가 틀립니다.');");
-			sb.append("history.back();");
-			sb.append("</script>");
-			out.print(sb.toString());
-
+			System.out.println("비밀번호가 다릅니다.");
 		} else if (result == -1) {
-			sb.append("<script>");
-			sb.append("alert('아이디가 다릅니다.');");
-			sb.append("history.back();");
-			sb.append("</script>");
-			out.print(sb.toString());
+			System.out.println("아이디가 다릅니다.");
 		} else {
-			sb.append("<script>");
-			sb.append("alert('DB 오류 입니다.');");
-			sb.append("history.back();");
-			sb.append("</script>");
-			out.print(sb.toString());
+			System.out.println("DB에 문제가 생겼습니다.");
 		}
 
 		RequestDispatcher rd = request.getRequestDispatcher(url);

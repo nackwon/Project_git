@@ -38,6 +38,7 @@
 	</form>
 	
 	<%
+		request.setCharacterEncoding("UTF-8");
 		ArrayList<MemberVO> list = (ArrayList<MemberVO>)request.getAttribute("list");
 		
 		StringBuffer sb = new StringBuffer("<table><tr><td>아이디</td><td>이메일</td><td>비밀번호</td></tr>");

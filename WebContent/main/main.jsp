@@ -11,9 +11,6 @@
 		text-align: center;
 	}
 </style>
-<script type="text/javascript">
-
-</script>
 </head>
 <body>
 <%

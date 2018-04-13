@@ -4,6 +4,7 @@
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 
 	<%
+		request.setCharacterEncoding("UTF-8");
 		MemberDAO dao = new MemberDAO();
 		MemberVO vo = new MemberVO();
 		String a_nickname = request.getParameter("a_nickname");
