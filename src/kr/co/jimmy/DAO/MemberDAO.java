@@ -159,13 +159,13 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECT * FROM member LIKE ?";
+		String sql = "SELECT * FROM member WHERE nickname LIKE ?";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userid);
 			rs = pstmt.executeQuery();
-			
+			vo = new MemberVO();
 			if(rs.next()) {
 				vo.setNickname(rs.getString(1));
 				vo.setEmail(rs.getString(2));

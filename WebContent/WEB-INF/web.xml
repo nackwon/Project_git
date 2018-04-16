@@ -3,46 +3,15 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	<!-- 회원가입 -->
+	<!-- handler -->
 	<servlet>
-		<servlet-name>myservlet</servlet-name>
-		<servlet-class>kr.co.jimmy.controller.JoinController</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>myservlet</servlet-name>
-		<url-pattern>/git</url-pattern>
-	</servlet-mapping>
-
-	<!-- 로그인 -->
-	<servlet>
-		<servlet-name>logincontroller</servlet-name>
-		<servlet-class>kr.co.jimmy.controller.LoginController</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>logincontroller</servlet-name>
-		<url-pattern>/login</url-pattern>
-	</servlet-mapping>
-	
-	<!-- admin 페이지 -->
-	<servlet>
-		<servlet-name>admincontroller</servlet-name>
-		<servlet-class>kr.co.jimmy.controller.AdminController</servlet-class>
+		<servlet-name>handler</servlet-name>
+		<servlet-class>kr.co.jimmy.controller.HandlerController</servlet-class>
+		<load-on-startup>1</load-on-startup><!-- 이 서블릿의 우선순위를 정해줌 -->
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>admincontroller</servlet-name>
-		<url-pattern>/admin</url-pattern>
-	</servlet-mapping>
-	
-	<!-- board 페이지 -->
-	<servlet>
-		<servlet-name>boardcontroller</servlet-name>
-		<servlet-class>kr.co.jimmy.controller.BoardController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>boardcontroller</servlet-name>
-		<url-pattern>/board</url-pattern>
+		<servlet-name>handler</servlet-name>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
 	<!-- DB 커넥션 풀 -->

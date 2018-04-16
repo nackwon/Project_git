@@ -10,7 +10,7 @@
 		session.invalidate();
 	%>
 	<script type="text/javascript">
-		location.href= "./login";
+		location.href= "./main/main.jsp";
 	</script>
 </body>
 </html>

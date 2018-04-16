@@ -32,7 +32,7 @@
 </script>
 </head>
 <body>
-	<form action="./git?cmd=searchMember" method="post">
+	<form action="./adminMember.do" method="post">
 		<input type="text" id="nickname" name="nickname" placeholder="아이디 입력 ">
 		<input type="submit" value="찾기" onclick="return searchMember()"> 
 	</form>

@@ -1,0 +1,6 @@
+/join.do=kr.co.jimmy.handler.JoinHandler
+/admin.do=kr.co.jimmy.AdminHandler.AdminHendler
+/adminMember.do=kr.co.jimmy.AdminHandler.AdminMemberHendler
+/main.do=kr.co.jimmy.handler.MainHendler
+/login.do=kr.co.jimmy.handler.LoginHandler
+/logout.do=kr.co.jimmy.handler.logoutHandler
