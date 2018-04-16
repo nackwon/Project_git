@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -44,21 +43,21 @@ span {
 		} else {
 			document.getElementById("n_span").innerHTML = "";
 
-		if (val.length < 3) {
-			document.getElementById("n_span").innerHTML = "3자 이상 작성을하세요";
-		} else {
-			document.getElementById("n_span").innerHTML = "";
-		}
+			if (val.length < 3) {
+				document.getElementById("n_span").innerHTML = "3자 이상 작성을하세요";
+			} else {
+				document.getElementById("n_span").innerHTML = "";
+			}
 
-		if (val == "") {
-			document.getElementById("n_span").innerHTML = "아이디를 입력하세요";
-		} else {
-			docuemnt.getElementById("n_span").innerHTML = "";
+			if (val == "") {
+				document.getElementById("n_span").innerHTML = "아이디를 입력하세요";
+			} else {
+				docuemnt.getElementById("n_span").innerHTML = "";
+			}
 		}
 	}
-
 	//이메일 중복 체크
-	function emailDupleCheck() {
+	/* function emailDupleCheck() {
 		var email = document.getElementById("email").value;
 
 		var xhr = new XMLHttpRequest();
@@ -81,17 +80,17 @@ span {
 	}
 
 	//이메일 빈칸 체크 등
-	function emailCheck(val) {
+	function emailCheck() {
 		
 		//이메일 유효성 테스트
-		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		//var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		
 		if (val == "") {
 			document.getElementById("n_span").innerHTML = "이메일을 입력하세요";
 		} else {
 			docuemnt.getElementById("n_span").innerHTML = "";
 		}
-	}
+	} */
 
 	//모든 체크가 끝난 후 최종 가입
 	function finalCheck() {
@@ -117,26 +116,21 @@ span {
 	<div class="container">
 		<form action="./git?cmd=registMember" method="post" name="l_f">
 			<div>
-				<input type="text" name="nickname" id="nickname"
-					class="control-label" onblur="nicknameDupleCheck()"
-					placeholder="Enter your Nickname" /> <input type="hidden"
-					id="isIdcheck" value="false" name="isIdCheck" />
+				<input type="text" name="nickname" id="nickname" class="control-label" onblur="nicknameDupleCheck()" placeholder="Enter your Nickname" />
+				<!-- <input type="hidden" id="isIdcheck" value="false" name="isIdCheck" /> -->
 			</div>
 			<span id="n_span" class="n_style"></span>
 			<div>
-				<input type="text" id="email" name="email"
-					onblur="emailDupleCheck()" placeholder="Enter your E-mail" /> <input
-					type="hidden" id="isEmailcheck" value="false" name="isEmailCheck" />
+				<input type="text" id="email" name="email" onblur="emailDupleCheck()" placeholder="Enter your E-mail" />
+				<!-- <input type="hidden" id="isEmailcheck" value="false" name="isEmailCheck" /> -->
 			</div>
 			<span id="e_span"></span>
 			<div>
-				<input class="" type="password" name="password"
-					placeholder="Enter your password" />
+				<input class="" type="password" name="password" placeholder="Enter your password" />
 			</div>
 			<span id="p_span" class="p_style"></span>
 			<div class="row">
-				<input class="btn" type="submit" value="Sign up" /> <span
-					id="final_check"></span>
+				<input class="btn" type="submit" value="Sign up" /> <span id="final_check"></span>
 			</div>
 		</form>
 	</div>

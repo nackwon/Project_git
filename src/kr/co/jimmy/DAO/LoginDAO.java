@@ -18,7 +18,11 @@ public class LoginDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT password FROM member WHERE nickname LIKE ?";
-				
+			
+		if(con == null) {
+			System.out.println("연결 노노");
+		}
+		
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userid);

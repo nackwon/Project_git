@@ -35,6 +35,16 @@
 		<url-pattern>/admin</url-pattern>
 	</servlet-mapping>
 	
+	<!-- board 페이지 -->
+	<servlet>
+		<servlet-name>boardcontroller</servlet-name>
+		<servlet-class>kr.co.jimmy.controller.BoardController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardcontroller</servlet-name>
+		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+	
 	<!-- DB 커넥션 풀 -->
 	<resource-ref>
 		<res-ref-name>jdbc/oracle</res-ref-name>

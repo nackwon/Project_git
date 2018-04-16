@@ -67,6 +67,7 @@ public class JoinController extends HttpServlet {
 			
 			url = "./main/admin.jsp";
 		}
+		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}
